@@ -42,11 +42,11 @@ console.log(getLetterGrade(65)); // This should print "Your grade is: F"
 
 **Part A:**
 
-Your response...
+This bug is occurring because they are creating the same variables again and again in the if statement which the computer can't receive because it is in the if statement scope. So the `letter` variable never gets reassigned to a value. This is why we get `undefined`
 
 **Part B:**
 
-Your response...
+The way to fix this is just to remove the let keyword in the if statements. This would make the variable `letter` outside of the if scope change and the return would refer to the only variable `letter` that is now reassigned to which ever statement is correct. 
 
 ---
 
@@ -69,11 +69,11 @@ console.log(originalSettings.volume);
 
 **Part A:**
 
-Your response...
+`75` will be logged to the console. This is because newSettings is holding originalSettings, or referring to `originalSettings` so when you run `newSettings.volume = 75` you are actually changing `originalSettings` volume to 75. Thus when you `console.log(originalSettings.volume)` you will get 75 and not 50.
 
 **Part B:**
 
-Your response...
+The way to modify the code so that changing `newSettings.volume` does Not affect `originalSettings.volume` is just to use the spread operator on the `newSettings` variable, so it would just look like this `{...originalSettings}`.
 
 **Corrected Code:**
 
@@ -110,4 +110,6 @@ Walk through what happens in the first iteration of filter:
 
 ### Response 3
 
-Your response...
+- The value of `product` is just each element, in the array, which in this case is each object in the array. 
+- What gets returned from the callback is every object in the array that has the `inStock` value set to `true` this is because in the `filter` method has the `return` value of `product.inStock` which by default is going to check if it is set to `true`.
+- The `returned` value will just be stored in `itemsInStock` and if you `console.log(itemsInStock)` then you will receive all the objects with the `inStock` value set to `true` 
